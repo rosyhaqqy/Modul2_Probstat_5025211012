@@ -5,6 +5,7 @@
 
 ### Soal 1A 
 > Carilah standar deviasi dari data selisih pasangan pengamatan tabel di atas.
+
 **Penjelasan**   
 mencari selisih dari antar data dengan index yang sama. Kemudian, dilakukan pencarian standar deviasi
 
@@ -24,6 +25,8 @@ sd(selisi)
 
 ### Soal 1B 
 >Carilah nilai t (p-value).
+
+
 **Penjelasan**   
 menggunakan fungsi t.test()
 
@@ -54,6 +57,7 @@ berarti terdapat pengaruh yang signifikan secara statistika dalam hal kadar satu
 
 ### Soal 2A
 >Apakah Anda setuju dengan klaim tersebut?
+
 **Penjelasan**   
 Setuju, karena dengan rata-rata 23.5000 dari sampel acak dengan standar deviasi 3900 kilometer, maka  mungkin klaim tersebut valid. 
 
@@ -68,6 +72,8 @@ Setuju, karena dengan rata-rata 23.5000 dari sampel acak dengan standar deviasi 
 
 ### Soal 2B
 >Jelaskan maksud dari output yang dihasilkan!
+
+
 **Penjelasan**   
 menggunakan fungsi tsum.test()
 
@@ -88,6 +94,7 @@ tsum.test(
 
 ### Soal 2C
 >Buatlah kesimpulan berdasarkan P-Value yang dihasilkan!
+
 **Penjelasan**   
 H0 ditolak karena p value < 0.05
 berarti mobil dikemudikan rata-rata lebih dari 20.000 kilometer per tahun.
@@ -101,6 +108,7 @@ berarti mobil dikemudikan rata-rata lebih dari 20.000 kilometer per tahun.
 
 ### Soal 3A 
 >H0 dan H1
+
 **Penjelasan**   
 H0: μ1 = μ2 (rata-rata saham di Bandung sama dengan di Bali)
 
@@ -116,6 +124,7 @@ H1: μ1 ≠ μ2 (rata-rata saham di Bandung tidak sama dengan di Bali)
 
 ### Soal 3B 
 >Hitung sampel statistik 
+
 **Penjelasan**   
 menggunakan fungsi tsum.test() dan mengunakan two sided karena two tail
 
@@ -136,6 +145,7 @@ tsum.test(
 
 ### Soal 3C
 >Lakukan uji statistik (df =2) 
+
 **Penjelasan**   
 menggunakan fungsi plotDist() untuk mendapatkan gambaran atau visualisasi dari statistik dengan derajat bebas sebesar 2
 
@@ -153,6 +163,7 @@ plotDist(dist = "t", df = 2, col = "green")
 
 ### Soal 3D
 >Nilai Kritikal
+
 **Penjelasan**   
 menggunakan fungsi qt()
 
@@ -171,6 +182,7 @@ qt(p = 0.025, df = 44, lower.tail = FALSE)
 
 ### Soal 3E
 >Keputusan 
+
 **Penjelasan**   
 Diketahui α = 0.05 dan p-value dari 3B adalah 0.06049.
 Karena nilai p-value masih lebih besar maka H0 tidak dapat ditolak karena bukti belum cukup
@@ -185,6 +197,7 @@ Karena nilai p-value masih lebih besar maka H0 tidak dapat ditolak karena bukti 
 
 ### Soal 3F 
 >Kesimpulan
+
 **Penjelasan**   
 Karena yang berlaku H0, maka dapat disimpulkan tidak terdapat perbedaan signifikan antara rata-rata kota Bandung dan Bali
 
@@ -198,6 +211,7 @@ Karena yang berlaku H0, maka dapat disimpulkan tidak terdapat perbedaan signifik
 
 ### Soal 4A
 > Buatlah masing masing jenis spesies menjadi 3 subjek "Grup" (grup 1,grup2,grup 3). Lalu Gambarkan plot kuantil normal untuk setiap kelompok dan lihat apakah ada outlier utama dalam homogenitas varians. 
+
 **Penjelasan**   
 ambil data dari https://rstatisticsandresearch.weebly.com/uploads/1/0/2/6/1026585/onewayanova.txt  lalu  lakukan grouping sesuai dengan label yang telah ditentukan sekaligus melakukan pengecekan value dalam grup yang dihasilkan.lalu membagi tiap valuer menjadi 3 bagian sesuai dengan label grup yang telah dibuat. terakhir menggambar plot kuantil normal untuk setiap grup untuk melihat distribusi data dan outlier utama dalam homogenitas varians pada masing-masing grup.
 
@@ -251,6 +265,7 @@ qqline(Group3$Length)
 
 ### Soal 4B
 >Carilah atau periksalah homogeneity of variances-nya. Berapa nilai p yang didapatkan? Apa hipotesis dan kesimpulan yang dapat diambil?
+
 **Penjelasan**   
 menggunakan fungsi bartlett.test()
 
@@ -268,6 +283,7 @@ bartlett.test(Length ~ Group, data = dataoneway)
 
 ### Soal 4C
 >Untuk uji ANOVA (satu arah), buatlah model linier dengan panjang versus grup dan beri nama model tersebut model 1.
+
 **Penjelasan**   
 menggunakan fungsi yaitu fungsi lm() dan anova()
 
@@ -286,6 +302,7 @@ anova(model1)
 
 ### Soal 4D
 >Dari hasil poin C, berapakah nilai p? Apa yang dapat Anda simpulkan dari H0?
+
 **Penjelasan**   
 Didapat p-value = 0.0013, karena 0.0013<0.05 (confidence interval) maka H0 dapat ditolak sehingga terbukti ada perbedaan panjang tetapi belum diketahui kucing mana yang memiliki perbedaan
 
@@ -299,6 +316,7 @@ Didapat p-value = 0.0013, karena 0.0013<0.05 (confidence interval) maka H0 dapat
 
 ### Soal 4E 
 >Verifikasilah jawaban model 1 dengan Post-hoc test Tukey HSD, dari nilai p yang didapatkan apakah satu jenis kucing lebih panjang dari yang lain? Jelaskan.
+
 **Penjelasan**   
 menggunakan TukeyHSD()
 
@@ -313,6 +331,7 @@ TukeyHSD(aov(model1))
 
 ### Soal 4F
 >Visualisasikan data dengan ggplot2 
+
 **Penjelasan**   
 menggunakan ggplot()
 
@@ -334,6 +353,7 @@ ggplot(dataoneway, aes(x = Group, y = Length)) +
 
 ### Soal 5A 
 >Buatlah plot sederhana untuk visualisasi data  
+
 **Penjelasan**   
 masukkan data set GTL.csv(jangan lupa taruh di working directory).lalu lakukan observasi pada dataset.selanjutnya lakukan viasualisasi
 
@@ -359,6 +379,7 @@ qplot(x = Temp, y = Light, geom = "point", data = GTL) + facet_grid(. ~ Glass, l
 
 ### Soal 5B
 >Lakukan uji ANOVA dua arah 
+
 **Penjelasan**   
 lakukan analisis of variance (AoV) dengan fungsi summary(aov()).
 
@@ -378,6 +399,7 @@ summary(anova)
 
 ### Soal 5C
 >Tampilkan tabel dengan mean dan standar deviasi keluaran cahaya untuk setiap perlakuan (kombinasi kaca pelat muka dan suhu operasi)  
+
 **Penjelasan**   
 menggunakan fungsi group_by() dan summarise()
 
@@ -395,6 +417,7 @@ print(data_summary)
 
 ### Soal 5D 
 >Lakukan uji Tukey  
+
 **Penjelasan**   
 menggunakan fungsi TukeyHSD()
 
@@ -412,6 +435,7 @@ print(tukey)
 
 ### Soal 5E
 >Gunakan compact letter display untuk menunjukkan perbedaan signifikan antara uji Anova dan uji Tukey
+
 **Penjelasan**   
 membuat compact letter display dengan fungsi multcompLetterS4() lalu tambahkan ke tabel dengan mean dan standar deviasi yang telah dibuat sebelumnya.
 
