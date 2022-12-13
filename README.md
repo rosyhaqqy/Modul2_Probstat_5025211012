@@ -267,7 +267,7 @@ qqline(Group3$Length)
 >Carilah atau periksalah homogeneity of variances-nya. Berapa nilai p yang didapatkan? Apa hipotesis dan kesimpulan yang dapat diambil?
 
 **Penjelasan**   
-menggunakan fungsi bartlett.test()
+menggunakan fungsi bartlett.test() dan karena p value> 0,05 maka ketiga grup memiliki variansi yang sama.
 
 **Kode Program**  
 ```R
